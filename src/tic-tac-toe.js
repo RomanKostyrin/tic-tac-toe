@@ -1,10 +1,5 @@
 class TicTacToe {
   constructor() {
-    // this.field = [
-    //   ['x', null, null],
-    //   [null, null, null],
-    //   [null, null, 'x'],
-    // ]
     this.field = [
       [null, null, null],
       [null, null, null],
@@ -33,6 +28,7 @@ class TicTacToe {
     })
     if (score === 9) {
       this.isNoMoreTurns = true
+      this.isWin = true
     }
 
     this.field.forEach((el, index) => {
@@ -73,25 +69,18 @@ class TicTacToe {
     if (this.winner === null && this.isNoMoreTurns === true) {
       this.isDrawResult = true
     }
-
-    // console.log(this.field[0][0], this.field[0][1], this.field[0][2])
-    // console.log(this.field[1][0], this.field[1][1], this.field[1][2])
-    // console.log(this.field[2][0], this.field[2][1], this.field[2][2])
-    // console.log(this.winner)
   }
 
   isFinished() {
     return this.isWin
   }
 
-  getWinner() {
-    return this.winner
-  }
-
   isDraw() {
     return this.isDrawResult
   }
-
+  getWinner() {
+    return this.winner
+  }
   noMoreTurns() {
     return this.isNoMoreTurns
   }
